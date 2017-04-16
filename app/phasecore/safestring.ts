@@ -1,5 +1,5 @@
 class SafeString {
-    private content: string;
+    protected content: string;
 
     constructor(content: string) {
         this.content = content;
@@ -11,98 +11,6 @@ class SafeString {
 
     public setContent(content: string): void {
       this.content = content;
-    }
-
-    public withoutBbcodeAndHtml(): string {
-      return this.escapeHtml(this.withBbcodeStripped());
-    }
-
-    public withBbcodeStripped(): string {
-      return this.stripBbcode(this.asIs());
-    }
-
-    /* Strips bbcode tags from the input string */
-    public stripBbcode(text: string): string {
-      var search = [
-        // Slight problem with [url] conflict "/(?<!.)((http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?)/",
-        /\[notag\](\[)(.*?)\[\/notag\]/i,
-        /\[b\](.*?)\[\/b\]/gi,
-        /\[i\](.*?)\[\/i\]/gi,
-        /\[u\](.*?)\[\/u\]/gi,
-        /\[ul\](.*?)\[\/ul\]/gi,
-        /\[li\](.*?)\[\/li\]/gi,
-        /\[s\](.*?)\[\/s\]/,
-        /\[img\](.*?)\[\/img\]/gi,
-        /\[url=(.*?)\](.*?)\[\/url\]/gi,
-        /\[url\](.*?)\[\/url\]/gi,
-        /\[quote=(.*?)\](.*?)\[\/quote\]/gi,
-        /\[center\](.*?)\[\/center\]/gi,
-        //'/\[youtube](.*?)?v=(.*?)\[\/youtube\]/',
-        //ASCII
-        /&amp;#91;/gi,
-        //smileys
-        /\:\)/gi,
-        /\:\(/gi,
-        /\&gt\;:D/gi,
-        /\:D/gi,
-        /\:P/gi,
-        /\;\)/gi,
-        /\(evil\)/gi,
-        /\(bash\)/gi,
-        /\(poolparty\)/gi,
-        /\(party\)/gi,
-        /\(hi\)/gi,
-        /\(knuckles\)/gi,
-        /\:O/gi,
-        /\\\o\//gi,
-        /\[#(.*?)\]/gi,
-        /\[color=(.*?)\](.*?)\[\/color\]/gi,
-        /\[colour=(.*?)\](.*?)\[\/colour\]/gi
-      ];
-
-      var replace = [
-        // "<a href=\"$2\">$2</a>",
-        '$2',
-        '$1',
-        '$1',
-        '$1',
-        '$1',
-        '$1',
-        '$1',
-        '$1',
-        '$1',
-        '$1', // This is now handled by linkify
-        '$2',
-        '$1',
-        //'<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/$2?rel=0" frameborder="0" allowfullscreen></iframe>',
-        //ASCII
-        '[',
-        //smileys
-        ':)',
-        ':(',
-        '>:D',
-        ':D',
-        ':P',
-        ';)',
-        '(evil)',
-        '(bash)',
-        '(poolparty)',
-        '(party)',
-        '(hi)',
-        '(knuckles)',
-        ':O',
-        '\\o/',
-        '&#$1;',
-        '$2',
-        '$2'
-
-      ];
-
-      for (var index in search) {
-        text = text.replace(search[index], replace[index]);
-      }
-
-      return text;
     }
 
     public getContentWithHtmlEscaped(quote_style?: any, charset?, double_encode?): string {
