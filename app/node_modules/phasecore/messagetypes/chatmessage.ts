@@ -1,5 +1,6 @@
 interface ChatMessage {
     discID: number;
+    messageID: number;
     userID: number;
     username: string;
     timestamp: number;
@@ -10,6 +11,7 @@ interface ChatMessage {
     systemName: string;
     avatar: string;
     IP: string | null;
+    content: string;
 }
 
 export default ChatMessage;
