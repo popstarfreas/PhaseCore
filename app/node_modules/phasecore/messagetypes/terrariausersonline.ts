@@ -1,6 +1,7 @@
-interface TerrariaUser {
+export interface TerrariaUser {
     name: string;
     tagColour: string;
+    tagName: string;
     ip?: string;
 }
 

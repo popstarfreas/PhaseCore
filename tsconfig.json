@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "target": "es5",
     "sourceMap": true,
     "strictNullChecks": true,
 	  "outDir": "build"
   },
   "include": [
-      "app/**/*"
+      "app/node_modules/phasecore/**/*"
   ]
 }
