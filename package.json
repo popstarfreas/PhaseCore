@@ -21,10 +21,10 @@
     "simple-peer": "^7.0.1",
     "socketcluster-client": "^5.1.1",
     "ts-loader": "^1.3.3",
-    "typescript": "^2.2.2",
     "webpack": "^1.14.0"
   },
   "devDependencies": {
+    "typescript": "^4.0.5",
     "webpack-dev-server": "^1.16.2"
   }
 }
