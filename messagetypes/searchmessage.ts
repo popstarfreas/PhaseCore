@@ -1,4 +1,5 @@
-export interface DiscussionMessage {
+interface SearchMessage {
+    messageID: number;
     userID: number;
     username: string;
     timestamp: number;
@@ -8,11 +9,7 @@ export interface DiscussionMessage {
     guest: boolean;
     systemName: string;
     avatar: string;
-    IP: string | null;
+    IP: number;
 }
 
-export interface DiscussionMessages {
-    discID: number;
-    messages: string;
-    oldestID: number;
-}
+export default SearchMessage;

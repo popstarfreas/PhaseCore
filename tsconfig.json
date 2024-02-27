@@ -1,11 +1,9 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "sourceMap": true,
-    "strictNullChecks": true,
-	  "outDir": "build"
-  },
-  "include": [
-      "app/**/*"
-  ]
+	"compilerOptions": {
+		"module": "commonjs",
+		"sourceMap": true,
+		"strictNullChecks": true,
+		"outDir": "."
+	},
+	"include": []
 }

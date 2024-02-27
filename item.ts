@@ -1,5 +1,5 @@
 class Item {
-    static IDs: Array<String> = [
+  public static ids: Array<string> = [
       "Iron Pickaxe",
       "Dirt Block",
       "Stone Block",
@@ -3931,7 +3931,7 @@ class Item {
       "Leinfors' Luxury Shampoo"
     ]
 
-    static NIDs: Array<String> = [
+    public static negativeIds: Array<string> = [
       "Gold Pickaxe",
       "Gold Broadsword",
       "Gold Shortsword",
